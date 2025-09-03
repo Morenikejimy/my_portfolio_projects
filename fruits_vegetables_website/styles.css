@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Apply these base styles to ALL elements on the page */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* It's better to apply scroll behavior to the <html> element */
+html {
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+/* CSS Custom Properties (Variables) */
+:root {
+    --green-color: #3cb815;
+    --light-green-color: #c0eb7b;
+    --orange-color: #ff7e00;
+    --light-orange-color: #f75f1d;
+    --text-color: #1a2428;
+    --bg-color: #ffffff;
+}
+
+ section{
+  padding: 4.5rem 0 1.5rem;
+ }
+
+
+img {
+    width: 100%;
+    display: block;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color); /* FIXED: Added a background color value */
+    box-shadow: 0 8px 11px rgba(14, 55, 54, 0.15); /* FIXED: Corrected rgb syntax */
+    padding: 20px 100px;
+    transition: 0.5s;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem; /* FIXED: Removed space before 'rem' */
+    cursor: pointer;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;         /* This tells the image HOW to scale */
+    object-position: center;   /* FIXED: This tells the image WHERE to align */
+    border-radius: 50%;
+}
+
+.profile span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    column-gap: 0.5rem;
+
+}
+
+.logo .fa-solid {
+    font-size: 24px;
+    color: var(--orange-color);
+}
+
+.navbar {
+    display: flex;
+    column-gap:0.5rem;
+}
+
+.navbar a {
+    font-size: 1rem; /* font: size is not valid. Also 24px is very large. */
+    padding: 0.5rem 1rem; /* Use a space, not a comma. */
+    font-weight: 500;
+    color: var(--text-color);
+    
+}
+
+.navbar a:hover,
+.navbar .home-active {
+    background: var(--green-color);
+    border-radius: 5rem;
+    color: var(--bg-color);
+    transition:background 0.5s ;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+.swiper-slide.container  {
+    position: relative;
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+    align-items:center;
+    background: url(images/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.swiper-slide.container img {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+}
+
+.home-text {
+    padding: 0 150px;
+}
+
+.home-text span {
+    font-weight: 400;
+    text-transform: uppercase;
+    color:var(--green-color);
+}
+
+.home-text h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    background:var(--green-color);
+    color: var(--bg-color);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    column-gap: 0.5rem;
+    max-width: 160px;
+}
+
+.btn .fa-solid{
+    padding:4px;
+    background: var(--bg-color);
+    color:var(--text-color);
+    border-radius: 1rem;
+     font-size: 20px;
+     margin: auto;
+}
+
+.btn:hover{
+ background: var(--light-orange-color);
+ transition: 0.2s ease;
+}
+
+.swiper-button-next {
+    background: url(images/iconright.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    margin-right: 20px;
+}
+.swiper-button-next::after {
+display: none;
+}
+
+.swiper-button-prev {
+    background: url(images/iconleft.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    margin-left: 20px;
+}
+.swiper-button-prev::after {
+display: none;
+}
+
+/* Categories section */
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h1{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.heading span {
+    color: var(--green-color);
+}
+
+.categories {
+max-width: 968px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto)); 
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.categories-container .box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius:0.5rem;
+}
+
+.categories-container .box img{
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.categories-container .box h2{
+    font-size: 1rem;
+    font-weight:600;
+}
+
+.categories-container .box span{
+    font-size: 0.8rem;
+    font-weight:400;
+    margin-bottom: 1rem;
+}
+
+.categories-container .box .fa-solid {
+    width: 30px;
+    height: 30px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: var(--green-color);
+    color: var(--bg-color);
+  border-radius: 5rem;
+  position: absolute;
+  margin-top: 2rem;
+  bottom: -8%;
+  display: none;
+}
+
+.categories-container .box .fa-solid:hover {
+  background: var(--light-orange-color);
+  transition: 0.2s all linear;
+}
+
+.categories-container .box:hover  .fa-solid{
+ display: block;
+  transition: 0.2s all linear;
+}
+
+.categories-container .box1 {background: #fef4ea;}
+
+.categories-container .box2 {
+    background: #e9f4e3;
+}
+.categories-container .box3 {
+    background: #faeaea;
+}
+.categories-container .box4 {
+    background: #eeeef9;
+}
+.categories-container .box5 {
+    background: #f7f6d7;
+}
+
+.products {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-container {
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto)); 
+    gap: 1.5rem;
+    margin-top: 2rem;  
+}
+
+.product-container .Box{
+    padding: 20px;
+    box-shadow: 1px 2px 11px 4px rgba(14, 55, 54, 0.15);
+    position:relative;
+    border-radius: 1.5rem;
+}
+
+.product-container .Box img{
+   width: 100%;
+   height:200px;
+   object-fit: contain;
+   object-position: center;
+}
+
+.product-container .Box span{
+   font-weight: 500;
+   font-size: 13px;
+}
+
+.product-container .Box h2{
+   font-weight: 600;
+   font-size: 1.2rem;
+}
+
+.product-container .Box .price{
+   font-weight: 600;
+   font-size: 1rem;
+   margin-top: 0.5rem;
+   color: var(--light-orange-color);
+}
+
+.product-container .Box .price span{
+  color: var(--text-color);
+}
+
+.product-container .Box .fa-cart-shopping {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+  padding: 8px;
+ background: var(--green-color);
+ font-size: 20px;
+  border-radius: 0.5rem 0.5rem 0rem;
+}
+
+.product-container .Box .fa-cart-shopping:hover{
+    background: var(--orange-color);
+    transition: 0.2s all linear;
+}
+
+.product-container .Box .fa-heart-circle-check{
+ position: absolute;
+ top: 1rem;
+ right: 1rem;
+ font-size: 20px;
+ color: var(--light-orange-color);
+}
+
+.product-container .Box .discount{
+position: absolute;
+top: 1rem;
+left: 0%;
+background: var(--light-orange-color);
+color: var(--bg-color);
+padding: 4px 18px;
+clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0% 100%, 0% 50%, 0 0);
+}
+
+.about {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, auto));
+    align-items: center;
+    gap:1.5rem;
+}
+
+.about-text span{
+    font-weight: 600;
+    text-transform: uppercase;
+    color:var(--green-color);
+}
+
+.about-text p {
+    margin: 0.5rem 0rem 1rem;
+}
+.customers {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.customers h2{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.customers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    align-items: center;
+    gap:1.5rem;
+}
+.customers-container .box {
+   padding: 20px;
+   box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%);
+   border-radius: 0.5rem;
+   border-bottom: 7px solid var(--light-green-color);
+}
+.customers-container .box:hover {
+   transform: translateY(10px);
+   transition: 0.2s  all linear;
+}
+.customers-container .box .fa-quote-left {
+    font-size: 24px;
+    color: var(--green-color);
+}
+.customers-container .box .stars .fa-star{
+   font-size: 1rem;
+   color: var(--light-orange-color);
+}
+.customers-container .box p{
+   font-size: 0.938rem;  
+}
+.profile-review {
+ display: flex;
+ align-items: center;
+ margin-top:1rem;
+ column-gap: 0.5rem;
+
+}
+.profile-review img{
+    width: 600px;
+    height: 60px;
+    border-radius: 40%;
+    object-fit:cover;
+    object-position: center; 
+}
+.profile-review h3{
+    font-size: 1rem;
+    font-weight: 600;
+}
