@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver App</title>
+    <link rel="stylesheet" href="userauth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section id = "authSection" class="auth-card"> 
+
+         <div id = "emailAuthForm"> 
+          <input type = "email" id = "authEmail" placeholder = "Email" required>
+           <input type="password" id="authPassword" placeholder="Password" required>
+                <button id="emailAuthBtn"></button> 
+                <div id="authMessage" class="message-area"></div>
+            </div>
+
+            <div class="auth-toggle">
+                <button id="showLogin">Login</button>
+                <button id="showSignup">Sign Up</button>
+         </div>
+
+                   <button id="googleLoginBtn" class="google-btn">Login with Google</button>
+        </section>
+
+<script src="index.js"></script>
+</body>
+</html>

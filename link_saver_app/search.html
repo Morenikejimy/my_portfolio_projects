@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver App</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Search and Filter - Visible only when logged in -->
+          <section class="card">
+            <h2>Search & Filter Links</h2>
+            <div id="search-flex">
+                <input type="text" id="searchBar" placeholder="Search links by title or URL...">
+                <select id="sortBy">
+                    <option value="dateDesc">Date Added (Newest First)</option>
+                    <option value="dateAsc">Date Added (Oldest First)</option>
+                    <option value="titleAsc">Title (A-Z)</option>
+                    <option value="titleDesc">Title (Z-A)</option>
+                </select>
+            </div>
+        </section>
+<script src="index.js"></script>
+</body>
+</html>

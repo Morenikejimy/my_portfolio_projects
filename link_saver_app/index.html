@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Home Page - Add New Link Page -->
+    
+  <section class ="home-page">  
+     <div id="link-header"> 
+        <h1> Link Saver </h1>
+        <h3> Add New Link </h3>
+     <form id="linkForm"  action="savedlink.html" method="get">
+            <input type="url" id="linkUrl" placeholder="Enter link URL" required>
+            <input type="text" id="linkTitle" placeholder="Give your link a title" optional>
+            <input type="text" id="linkTags" placeholder="Add tags (e.g., 'tech, tutorial')">
+            <button type="submit" id = "saveLinkBtn" action="savedlink.html" method="get"></button>>Save Link</button>
+  </form>
+   </div>
+   </section>
+
+
+      <!-- User Authentification Feature-->
+
+       <section id = "authSection" class="auth-card"> 
+
+         <div id = "emailAuthForm"> 
+          <input type = "email" id = "authEmail" placeholder = "Email" required>
+           <input type="password" id="authPassword" placeholder="Password" required>
+                <button id="emailAuthBtn"></button> 
+                <div id="authMessage" class="message-area"></div>
+            </div>
+
+            <div class="auth-toggle">
+                <button id="showLogin" action="userinfo.html" method="get">Login</button>
+                <button id="showSignup" action="userinfo.html" method="get">Sign Up</button>
+         </div>
+
+                   <button id="googleLoginBtn" class="google-btn">Login with Google</button>
+        </section>
+
+        
+       <!-- User Info Section -->
+<section id="userInfoSection">
+  
+  <!-- Profile Icon (default is a Font Awesome icon) -->
+  <div id="profileIcon">
+    <i id="profileImage" class="fa-solid fa-user-tie"></i>
+  </div>
+  
+  <!-- Welcome text -->
+  <p>
+    Welcome, 
+    <span id="userNameDisplay">User</span> 
+    (<span id="userEmailDisplay">user@email.com</span>)
+  </p>
+
+  <!-- Upload new profile image -->
+  <input type="file" id="uploadProfileImage" accept="image/*">
+  
+
+  <!-- Logout button -->
+  <button id="logoutBtn">Logout</button>
+
+</section>
+
+
+  
+    <!-- Saved Link Page / Placeholder for saved links -->
+     <section class = "saved-link">
+
+     <h2>Your Saved Links</h2>
+
+     <ol id="savedLinksList">
+       <li>
+         <span class="link-title">OpenAI</span> -
+        <a href="https://openai.com" target="_blank">https://openai.com</a>
+        <button class="delete-btn">x</button>
+      </li>
+
+       <li class="link-item">
+         <span class="link-title">OpenAI</span> -
+        <a href="https://openai.com" target="_blank">https://openai.com</a>
+        <button class="delete-btn">x</button>
+       </li>
+
+       <li class="link-item">
+         <span class="link-title">Youtube</span> -
+        <a href="https://openai.com" target="_blank">https://youtube.com</a>
+        <button class="delete-btn">x</button>
+       </li>
+
+       <li class="link-item">
+         <span class="link-title">Freecodecamp</span> -
+        <a href="https://openai.com" target="_blank">https://Freecodecamp.com</a>
+        <button class="delete-btn">x</button>
+       </li>
+     </ol>
+     </section>
+
+  
+        
+
+        <!-- Search and Filter - Visible only when logged in -->
+          <section class="card">
+            <h2>Search & Filter Links</h2>
+            <div id="search-flex">
+                <input type="text" id="searchBar" placeholder="Search links by title or URL...">
+                <select id="sortBy">
+                    <option value="dateDesc">Date Added (Newest First)</option>
+                    <option value="dateAsc">Date Added (Oldest First)</option>
+                    <option value="titleAsc">Title (A-Z)</option>
+                    <option value="titleDesc">Title (Z-A)</option>
+                </select>
+            </div>
+        </section>
+
+ <script src="index.js"></script>
+</body>
+</html>

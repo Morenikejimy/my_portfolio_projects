@@ -1,0 +1,96 @@
+:root {
+  --offwhite-color: #FAF9F6;
+  --white-color: #ffffff;
+  --blue-color: #4169E1;
+  --blue-dark: #00008B;
+  --text-color: #000000;
+  --color-muted: #6b7280;
+  --radius: 10px;
+  --gap: 12px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --btn-padding: 0.6rem 1rem;
+  --button-hover: #75ba75;
+  --h3-font-size: 40px;
+  --h3-font-weight: 400;
+}
+
+
+   /* Global Styles */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--offwhite-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+/* User Info Section */
+#userInfoSection {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Profile Icon */
+#profileIcon {
+  margin-bottom: 15px;
+}
+
+#profileImage {
+  font-size: 70px;
+  color: #4169e1; /* royal blue */
+}
+
+/* Welcome text */
+#userInfoSection p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0 20px;
+}
+
+#userNameDisplay {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#userEmailDisplay {
+  font-style: italic;
+  color: #555;
+}
+
+/* File Upload */
+#uploadProfileImage {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Logout Button */
+#logoutBtn {
+  background: #4169e1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#logoutBtn:hover {
+  background: #27408b; /* darker blue */
+  transform: translateY(-2px);
+}
+
