@@ -9,40 +9,19 @@
 </head>
 <body>
 
-  <!-- Home Page - Add New Link Page -->
-    
-  <section class ="home-page">  
-     <div id="link-header"> 
-        <h1> Link Saver </h1>
-        <h3> Add New Link </h3>
-     <form id="linkForm"  action="savedlink.html" method="get">
-            <input type="url" id="linkUrl" placeholder="Enter link URL" required>
-            <input type="text" id="linkTitle" placeholder="Give your link a title" optional>
-            <input type="text" id="linkTags" placeholder="Add tags (e.g., 'tech, tutorial')">
-            <button type="submit" id = "saveLinkBtn" action="savedlink.html" method="get"></button>>Save Link</button>
-  </form>
-   </div>
-   </section>
-
-
       <!-- User Authentification Feature-->
 
-       <section id = "authSection" class="auth-card"> 
+<div id="emailAuthForm">
+  <input type="email" id="authEmail" placeholder="Email" required>
+  <input type="password" id="authPassword" placeholder="Password" required>
 
-         <div id = "emailAuthForm"> 
-          <input type = "email" id = "authEmail" placeholder = "Email" required>
-           <input type="password" id="authPassword" placeholder="Password" required>
-                <button id="emailAuthBtn"></button> 
-                <div id="authMessage" class="message-area"></div>
-            </div>
+  <!-- Buttons that perform actions -->
+  <button id="loginBtn">Login</button>
+  <button id="signupBtn">Sign Up</button>
+  <button id="googleLoginBtn">Sign in with Google</button>
 
-            <div class="auth-toggle">
-                <button id="showLogin" action="userinfo.html" method="get">Login</button>
-                <button id="showSignup" action="userinfo.html" method="get">Sign Up</button>
-         </div>
-
-                   <button id="googleLoginBtn" class="google-btn">Login with Google</button>
-        </section>
+  <div id="authMessage" class="message-area"></div>
+</div>
 
         
        <!-- User Info Section -->
@@ -63,7 +42,8 @@
   <!-- Upload new profile image -->
   <input type="file" id="uploadProfileImage" accept="image/*">
   
-
+ <!-- Enter link button -->
+  <button id="newlinkBtn">Enter new link</button>
   <!-- Logout button -->
   <button id="logoutBtn">Logout</button>
 

@@ -38,73 +38,104 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Authentification Feature
-document.addEventListener ("DOMContentLoaded", () => {
-// select elements
-const showLogin = document.getElementById("showLogin");
-const showSignup = document.getElementById ("showSignup");
-const authEmail = document.getElementById("authEmail");
-const authPassword = document.getElementById("authPassword");
-const emailAuthBtn = document.getElementById ("emailAuthBtn");   
-const authMessage = document.getElementById("authMessage");
-const googleLoginBtn = document.getElementById("googleLoginBtn");
-});
+// AUTHENTIFICATION FEATURES
 
-// Track mode
+document.addEventListener("DOMContentLoaded", () => {
+  // Select  the DOM elements we'll work with
+  const showLogin = document.getElementById("showLogin");   // optional tabs to switch mode
+  const showSignup = document.getElementById("showSignup"); // optional tabs to switch mode
+  const authEmail = document.getElementById("authEmail");
+  const authPassword = document.getElementById("authPassword");
+  const authMessage = document.getElementById("authMessage");
+  const googleLoginBtn = document.getElementById("googleLoginBtn");
+
+  // The two action buttons that actually submit login/signup
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+
+  // Keep track of which UI mode is shown (optional)
   let isLoginMode = true;
- // Function to update UI based on mode
 
- function updateAuthMode () {
+  // Update UI depending on mode (shows message and hides the other action button)
+  function updateAuthMode() {
+    if (!authMessage || !loginBtn || !signupBtn) return;
+
     if (isLoginMode) {
-       emailAuthBtn.textcontent = "Login";
-        authMessage.textcontent = "Enter your email & password to login.";
+      authMessage.textContent = "Enter your email & password to login.";
+      loginBtn.classList.remove("hidden");
+      signupBtn.classList.add("hidden");
     } else {
-      emailAuthBtn.textContent = "Sign Up";
       authMessage.textContent = "Create a new account.";
+      signupBtn.classList.remove("hidden");
+      loginBtn.classList.add("hidden");
     }
- }
+  }
 
-//  Toggle Button
-showLogin.addEventListener("click", () => {
-    isLoginMode = true;
-    updateAuthMode();
-  });
+  // If you have "tabs" or links to toggle the mode, hook them up (optional)
+  if (showLogin) {
+    showLogin.addEventListener("click", () => {
+      isLoginMode = true;
+      updateAuthMode();
+    });
+  }
+  if (showSignup) {
+    showSignup.addEventListener("click", () => {
+      isLoginMode = false;
+      updateAuthMode();
+    });
+  }
 
-  showSignup.addEventListener("click", () => {
-    isLoginMode = false;
-    updateAuthMode();
-  });
+  // Handle Login button click
+  if (loginBtn) {
+    loginBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // prevent page reload if inside a form
 
-//  Handle form submission
-emailAuthBtn.addEventListener ("click", (e) => {
-    e.preventDefault();
-    const email = authEmail.value .trim ();
-    const password = authPassword.value .trim();
+      const email = authEmail.value.trim();
+      const password = authPassword.value.trim();
 
-    if (!email || !password) {
+      if (!email || !password) {
         authMessage.textContent = "⚠️ Please enter email and password.";
         return;
-    }
+      }
 
-    // Fake login/signup logic 
-    if (isLoginMode) {
-      authMessage.textContent = "Logged in as ${email}";
-    } else {
-      authMessage.textContent = "Account created for ${email}";
-    }
+      // === PLACEHOLDER: Replace this with real authentication logic (Firebase / backend API) ===
+      authMessage.textContent = `Logged in as ${email}`;
+      // Example redirect to user profile — change to your real URL:
+      window.location.href = "/profile.html";
+    });
+  }
 
-    // Clear inputs
-    authEmail.value = "";
-    authPassword.value = "";
-  });
+  //  Handle Signup button click
+  if (signupBtn) {
+    signupBtn.addEventListener("click", (e) => {
+      e.preventDefault();
 
-//   Google login button/ placeholder
-googleLoginBtn.addEventListener ("click", (e) => {
-    authMessage.textContent = "Google login not implemented yet."
+      const email = authEmail.value.trim();
+      const password = authPassword.value.trim();
 
-    // Initialise UI
-     updateAuthMode();
+      if (!email || !password) {
+        authMessage.textContent = "⚠️ Please enter email and password.";
+        return;
+      }
+
+      authMessage.textContent = `Account created for ${email}`;
+      // Example redirect after signup — change to your real URL:
+      window.location.href = "/welcome.html";
+    });
+  }
+
+  // Google login (placeholder)
+  if (googleLoginBtn) {
+    googleLoginBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      authMessage.textContent = "Google login not implemented yet.";
+    });
+  }
+
+  // Initialize UI when the page loads
+  updateAuthMode();
 });
+
 
 // Saved Link Page
 const savedLinksList = document.getElementById ("savedLinksList");

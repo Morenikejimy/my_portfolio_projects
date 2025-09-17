@@ -1,0 +1,116 @@
+ :root {
+  --offwhite-color: #FAF9F6;
+  --white-color: #ffffff;
+  --blue-color: #4169E1;
+  --blue-dark: #00008B;
+  --text-color: #000000;
+  --color-muted: #6b7280;
+  --radius: 10px;
+  --gap: 12px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --btn-padding: 0.6rem 1rem;
+  --button-hover: #75ba75;
+  --h3-font-size: 40px;
+  --h3-font-weight: 400;
+}
+
+
+   /* Global Styles */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--offwhite-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+ 
+ 
+ /* Authentication Section */
+#emailAuthForm {
+  max-width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+/* Input fields */
+#emailAuthForm input[type="email"],
+#emailAuthForm input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+#emailAuthForm input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Buttons */
+#emailAuthForm button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+/* Login button */
+#loginBtn {
+  background-color: #007bff;
+  color: white;
+}
+
+#loginBtn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Signup button */
+#signupBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+#signupBtn:hover {
+  background-color: #1e7e34;
+  transform: translateY(-1px);
+}
+
+/* Google button */
+#googleLoginBtn {
+  background-color: #db4437;
+  color: white;
+}
+
+#googleLoginBtn:hover {
+  background-color: #a83226;
+  transform: translateY(-1px);
+}
+
+/* Message area */
+.message-area {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
